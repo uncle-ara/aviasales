@@ -1,8 +1,13 @@
 import React from "react";
-import "./Filter.module.scss";
+
+import styles from "./Filter.module.scss";
 
 const Filter = () => {
-  return <div>1</div>;
+  return (
+    <div className={styles.base}>
+      <input type="checkbox" />
+    </div>
+  );
 };
 
 export default Filter;

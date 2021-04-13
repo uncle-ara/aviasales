@@ -2,7 +2,7 @@ import React from "react";
 import "./Tabs.module.scss";
 
 const Tabs = () => {
-  return <div>2</div>;
+  return <div></div>;
 };
 
 export default Tabs;
