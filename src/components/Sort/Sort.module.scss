@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.base {
+  width: 167px;
+  height: 50px;
+  outline: none;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background-color: $color-panel;
+  cursor: pointer;
+  color: #4a4a4a;
+
+  &:hover {
+    color: $color-main;
+  }
+
+  &:focus {
+    background-color: $color-main;
+    color: white;
+  }
+
+  &_round {
+    &_default {
+      border-top: 1px solid #dfe5ec;
+      border-bottom: 1px solid #dfe5ec;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    &_left {
+      border: 1px solid #dfe5ec;
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    &_right {
+      border: 1px solid #dfe5ec;
+      border-radius: 0px 5px 5px 0px;
+    }
+  }
+}

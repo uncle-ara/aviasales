@@ -1,8 +1,8 @@
 import React from "react";
-import "./Ticket.module.scss";
+import styles from "./Ticket.module.scss";
 
 const Ticket = () => {
-  return <div></div>;
+  return <div className={styles.base}></div>;
 };
 
 export default Ticket;

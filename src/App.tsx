@@ -1,8 +1,10 @@
 import React from "react";
 
+import Filter from "./components/Filter";
 import Ticket from "./components/Ticket";
+import Sort, { Round } from "./components/Sort";
+
 import styles from "./App.module.scss";
-import Tabs from "./components/Tabs/Tabs";
 
 const App = React.memo(() => {
   return (
@@ -10,11 +12,19 @@ const App = React.memo(() => {
       <div className={styles.header}>
         <div className={styles.logo} />
       </div>
-      <div className={""}>
-        <div className="left">{/* <Filter /> */}</div>
-        <div className="right">
-          <Tabs />
-          <Ticket />
+      <div className={styles.content}>
+        <div className={styles.left}>
+          <Filter />
+        </div>
+        <div className={styles.right}>
+          <div className={styles.sorts}>
+            <Sort round={Round.Left}>Самый дешевый</Sort>
+            <Sort round={Round.Default}>Самый быстрый</Sort>
+            <Sort round={Round.Right}>Оптимальный</Sort>
+          </div>
+          <div className={styles.ticket}>
+            <Ticket />
+          </div>
         </div>
       </div>
     </div>
