@@ -1,6 +1,9 @@
 @import "./styles/variables.scss";
 
 .base {
+  width: 754px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
@@ -10,6 +13,14 @@
   justify-content: center;
 }
 
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: #2196f3;
+  text-transform: uppercase;
+}
+
 .logo {
   width: 60px;
   height: 60px;
@@ -17,23 +28,25 @@
 }
 
 .content {
-  margin: 50px;
-
+  width: 100%;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
 
 .left {
+  width: 232px;
 }
 
 .right {
   margin-left: 20px;
+  width: 100%;
 }
 
 .sorts {
   display: flex;
 }
 
-.ticket {
+.tickets {
   margin-top: 20px;
 }

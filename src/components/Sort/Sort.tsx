@@ -3,22 +3,39 @@ import cx from "classnames";
 
 import styles from "./Sort.module.scss";
 
-export enum Round {
-  Default = `default`,
-  Left = `left`,
-  Right = `right`,
+export enum BillType {
+  Cheap,
+  Fast,
+  Optimal,
 }
 
-export type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  round: Round;
+export type Props = {
+  onSelect: (type: BillType) => void;
+  selected?: BillType;
 };
 
-const Sort = ({ className, round = Round.Default, ...rest }: Props) => {
+const elements = [
+  { type: BillType.Cheap, text: "Самый дешевый" },
+  { type: BillType.Fast, text: "Самый быстрый" },
+  { type: BillType.Optimal, text: "Оптимальный" },
+];
+
+const Sort = ({ onSelect, selected }: Props) => {
   return (
-    <button
-      className={cx(styles.base, className, styles[`base_round_${round}`])}
-      {...rest}
-    ></button>
+    <div className={styles.base}>
+      {elements.map(({ type, text }) => (
+        <button
+          key={type}
+          className={cx(
+            styles.button,
+            selected === type && styles.button_selected
+          )}
+          onClick={() => onSelect(type)}
+        >
+          {text}
+        </button>
+      ))}
+    </div>
   );
 };
 
