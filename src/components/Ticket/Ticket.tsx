@@ -1,5 +1,5 @@
 import React from "react";
-import { getTimeFromMins, getTimeFromAndTo } from "../../helpers";
+import { getTimeFromMins, getTimeFromAndTo, diclanite } from "../../helpers";
 import styles from "./Ticket.module.scss";
 
 export type Segment = {
@@ -42,8 +42,21 @@ const Ticket = ({ price, carrier, segments }: Props) => {
                 <div className={styles.value}>{getTimeFromMins(duration)}</div>
               </div>
               <div className={styles.column}>
-                <div className={styles.title}>{stops.length} Пересадки</div>
-                <div className={styles.value}>{stops}</div>
+                {stops.length === 0 ? (
+                  <div className={styles.title}>Без пересадок</div>
+                ) : (
+                  <>
+                    <div className={styles.title}>
+                      {stops.length}{" "}
+                      {diclanite(stops.length, [
+                        "Пересадка",
+                        "Пересадки",
+                        "Пересадок",
+                      ])}
+                    </div>
+                    <div className={styles.value}>{stops.join(", ")}</div>
+                  </>
+                )}
               </div>
             </div>
           )
