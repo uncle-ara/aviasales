@@ -1,1 +1,1 @@
-### ✈️ [Just try it!](https://uncle-ara.github.io/aviasales/)
+### ✈️ [Try the app!](https://uncle-ara.github.io/aviasales/)
